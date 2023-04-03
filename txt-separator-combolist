@@ -1,8 +1,8 @@
 import os
 #CÓDIGO PYTHON
 # Definir o caminho para o arquivo original e o diretório de saída
-input_file = 'C:/Users/Gasc/Desktop/Pastas/Codagens/separador/DbEmail.txt'
-output_dir = 'C:/Users/Gasc/Desktop/Pastas/Codagens/separador/output'
+input_file = 'Caminho/do/arquivo/aquivo.txt'
+output_dir = 'Caminho/do/arquivo/output'
 
 # Abrir o arquivo de origem e ler todas as linhas
 with open(input_file, 'r', encoding='utf-8') as infile:
