@@ -1,0 +1,24 @@
+import os
+#CÓDIGO PYTHON
+# Definir o caminho para o arquivo original e o diretório de saída
+input_file = 'C:/Users/Gasc/Desktop/Pastas/Codagens/separador/DbEmail.txt'
+output_dir = 'C:/Users/Gasc/Desktop/Pastas/Codagens/separador/output'
+
+# Abrir o arquivo de origem e ler todas as linhas
+with open(input_file, 'r', encoding='utf-8') as infile:
+    lines = infile.readlines()
+
+# Definir o tamanho de cada grupo de linhas
+group_size = 20000
+
+# Dividir as linhas em grupos
+line_groups = [lines[i:i+group_size] for i in range(0, len(lines), group_size)]
+
+# Criar o diretório de saída, se ainda não existir
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
+# Para cada grupo, criar um novo arquivo de texto e escrever as linhas nele
+for i, group in enumerate(line_groups):
+    with open(f'{output_dir}/output_{i}.txt', 'w', encoding='utf-8') as outfile:
+        outfile.writelines(group)
